@@ -13,6 +13,8 @@ function reverseInt ( n )
 
   // Solution #1 Built in method (Math.sign)
   // let reversed = n.toString().split( "" ).reverse().join( '' );
+
+  // Math.sign checks if n is negative it would be like multiplying reversed with -1, if n is positive it would be multiplying to 1
   // return parseInt(reversed) * Math.sign(n);
 
   // Solution #2 Doing Math.sign manually
