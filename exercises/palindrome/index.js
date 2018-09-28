@@ -7,6 +7,23 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome ( str )
+{
+  //You can use any of the reverse string solutions adding the check between the str parameter (original string) and the reversed string
+  // i chose the for because it's simpler to take into account the spaces
+ 
+    let newStr = '';
+    for ( let letter of str )
+    {
+      newStr = letter + newStr;
+    }
+   
+  if ( newStr === str ) { return true; }
+  else { return false;}
+
+ 
+
+
+}
 
 module.exports = palindrome;

@@ -62,7 +62,7 @@ function reverse ( str )
 
     // Solution #6 Recursion
 
-    return reverse( str.substr( 1 ) ) + str.charAt( 0 );
+    // return reverse( str.substr( 1 ) ) + str.charAt( 0 );
   }
 }
 
