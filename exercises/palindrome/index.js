@@ -12,17 +12,22 @@ function palindrome ( str )
   //You can use any of the reverse string solutions adding the check between the str parameter (original string) and the reversed string
   // i chose the for because it's simpler to take into account the spaces
  
-    let newStr = '';
-    for ( let letter of str )
-    {
-      newStr = letter + newStr;
-    }
+  // Solution #1 for loop
+  //   let newStr = '';
+  //   for ( let letter of str )
+  //   {
+  //     newStr = letter + newStr;
+  //   }
    
-  if ( newStr === str ) { return true; }
-  else { return false;}
+  // return newStr === str;
 
- 
+  //Solution #2 Built in method
+  // Solves the problem but does more checks than necessary
 
+  // return [ ...str ].every( ( char, i ) =>
+  // {
+  //   return char === str[str.length - 1 - i];
+  // } );
 
 }
 
