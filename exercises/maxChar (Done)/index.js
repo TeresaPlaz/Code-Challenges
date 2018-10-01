@@ -17,7 +17,7 @@ function maxChar ( str )
   let maxCh;
 
   // Turns the string into a array to loop through it
-  [ ...str ].map( ( element ) =>
+  [ ...str ].forEach( ( element ) =>
   {
 
     // Checks if the character already exist inside the new object, if it does it adds 1 to the counter if not
