@@ -8,6 +8,79 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams ( stringA, stringB )
+{
+  // Solution #1 too many loops though
+
+  // const newObj1 = newObject( stringA );
+  // const newObj2 = newObject( stringB );
+
+  // if ( Object.keys( newObj1 ).length !== Object.keys( newObj2 ).length )
+  // {
+  //   return false;
+  // }
+  
+  // else
+  // {
+
+  //   for ( let i in newObj1 )
+  //   {
+  //     if ( newObj2[i] !== newObj1[i])
+  //     {
+  //       return false;
+  //     }
+  //   }
+
+  //   return true;
+  // }
+
+  //Solution #2
+
+  // let regex = /[^\w]/g; 
+  // let str1d = str1.replace( regex, "" ).toLowerCase();
+  // let str2d = str2.replace( regex, "" ).toLowerCase();
+
+  // if (str1d.length !== str2d.length){
+  //   return false;
+  // }
+  
+  // let objMatch = {};
+
+  // for (let i = 0; i < str1.length; i++) {
+  //   if(!objMatch[str1d[i]]) {
+  //     objMatch[str1d[i]] = 1;  
+  //   } else {
+  //     objMatch[ str1d[ i ] ] += 1; 
+  //   }
+
+  //     if(!objMatch[str2d[i]]) {
+  //     objMatch[str2d[i]] = -1;  
+  //   } else {
+  //       objMatch[ str2d[ i ] ] -= 1; 
+  //   }
+  // } 
+
+  // for (var key in objMatch) {
+  //   if(objMatch[key] !==0) {
+  //     return false;
+  // }
+  // //console.log(key, objMatch[key]);
+  // }
+  // return true;
+
+}
+
+
+//Part of solution #1 
+// function newObject ( string )
+// {
+//   let newObj = {};
+//   [ ...string.replace(/[^\w]/g), "" ].forEach( ( element ) =>
+//   {
+//     newObj[ element ] = newObj[ element ] + 1 || 1;
+//   } );
+
+//   return newObj;
+// }
 
 module.exports = anagrams;
