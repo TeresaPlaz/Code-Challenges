@@ -17,7 +17,7 @@
 //       '### '
 //       '####'
 
-function steps ( n, row = 0, stair = "" )
+function steps ( n /*, row = 0, stair = ""   part of solution #2 */)
 {
   //Solution #1 i hate double loops but whatevs
 
@@ -43,28 +43,28 @@ function steps ( n, row = 0, stair = "" )
   //Solution #2 Recursion
 
 
-  if ( n === row )
-  {
-    return;
-  }
+  // if ( n === row )
+  // {
+  //   return;
+  // }
 
-  if ( n === stair.length )
-  {
-    console.log( stair );
-    steps( n, row + 1 );
-    return;
-  }
+  // if ( n === stair.length )
+  // {
+  //   console.log( stair );
+  //   steps( n, row + 1 );
+  //   return;
+  // }
 
-  if ( stair.length <= row )
-  {
-    stair += "#";
-  }
-  else
-  {
-    stair += " ";
-  }
+  // if ( stair.length <= row )
+  // {
+  //   stair += "#";
+  // }
+  // else
+  // {
+  //   stair += " ";
+  // }
 
-  steps( n, row, stair );
+  // steps( n, row, stair );
 }
 
 module.exports = steps;
