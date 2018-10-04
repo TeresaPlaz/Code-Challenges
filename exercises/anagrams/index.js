@@ -68,6 +68,10 @@ function anagrams ( stringA, stringB )
   // }
   // return true;
 
+  //Solution #3
+
+  return cleanStr( stringA ) === cleanStr( stringB );
+
 }
 
 
@@ -82,5 +86,11 @@ function anagrams ( stringA, stringB )
 
 //   return newObj;
 // }
+
+//Part of solution #3
+function cleanStr ( str )
+{
+  return str.replace( /[^\w]/g, "" ).toLowerCase().split( "" ).sort().join( "" );
+}
 
 module.exports = anagrams;
