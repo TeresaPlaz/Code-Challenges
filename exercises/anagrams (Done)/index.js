@@ -37,8 +37,8 @@ function anagrams ( stringA, stringB )
   //Solution #2
 
   // let regex = /[^\w]/g; 
-  // let str1d = str1.replace( regex, "" ).toLowerCase();
-  // let str2d = str2.replace( regex, "" ).toLowerCase();
+  // let str1d = stringA.replace( regex, "" ).toLowerCase();
+  // let str2d = stringB.replace( regex, "" ).toLowerCase();
 
   // if (str1d.length !== str2d.length){
   //   return false;
@@ -64,7 +64,7 @@ function anagrams ( stringA, stringB )
   //   if(objMatch[key] !==0) {
   //     return false;
   // }
-  // //console.log(key, objMatch[key]);
+  //
   // }
   // return true;
 
