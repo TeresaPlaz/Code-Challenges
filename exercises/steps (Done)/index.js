@@ -42,7 +42,6 @@ function steps ( n /*, row = 0, stair = ""   part of solution #2 */)
 
   //Solution #2 Recursion
 
-
   // if ( n === row )
   // {
   //   return;
@@ -65,6 +64,7 @@ function steps ( n /*, row = 0, stair = ""   part of solution #2 */)
   // }
 
   // steps( n, row, stair );
+
 }
 
 module.exports = steps;
