@@ -42,19 +42,29 @@ function pyramid ( n )
   
   //Solution #2 Array
 
- for (i = 1; i <= n; i++) {
-    let arr = [];
-    for (y = 0; y < n; y++) {
-        if (y == 0) {
-            arr.push('#');
-        } else if (y >= i) {
-            arr.push(" ");
-            arr.unshift(" ");
-        } else {
-            arr.push("#");
-            arr.unshift("#");
-        }
-    }
+//  for (i = 1; i <= n; i++) {
+//     let arr = [];
+//     for (y = 0; y < n; y++) {
+//         if (y == 0) {
+//             arr.push('#');
+//         } else if (y >= i) {
+//             arr.push(" ");
+//             arr.unshift(" ");
+//         } else {
+//             arr.push("#");
+//             arr.unshift("#");
+//         }
+//     }
+//     console.log(arr.join(""));
+// }
+
+//Solution #3 One for loop    
+for (let i = 0; i < n; i++) {
+    let arr = ["#"];
+    arr.push( "#".repeat( i ) );
+    arr.unshift( "#".repeat( i ) );
+    arr.push( " ".repeat( n - i - 1 ) );
+    arr.unshift( " ".repeat( n - i - 1 ) );
     console.log(arr.join(""));
 }
 
