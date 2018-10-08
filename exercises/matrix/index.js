@@ -15,6 +15,10 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-function matrix(n) {}
+function matrix ( n )
+{
+  const OuterArr = [];
+  OuterArr.push( [].repeat( n ) ); 
+}
 
 module.exports = matrix;
