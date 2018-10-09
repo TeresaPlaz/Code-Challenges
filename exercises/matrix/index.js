@@ -17,8 +17,57 @@
 
 function matrix ( n )
 {
-  const OuterArr = [];
-  // OuterArr.push( [].repeat( n ) ); 
+    const OuterArr = [];
+    let startColumn = 0;
+    let endColumn = n -1;
+    let startRow = 0;
+    let endRow = n - 1;
+    let Counter = 1;
+  
+  for ( let y = 1; y <= n; y++ )
+  {
+    OuterArr.push( [] );  
+  }
+  while (startColumn <= endColumn && startRow <= endRow)
+  {
+    // Top Row
+    for ( let TopRowIndex = startColumn; TopRowIndex <= endColumn; TopRowIndex++ )
+    {
+      OuterArr[ startRow ][ TopRowIndex ] = Counter;
+      Counter++;
+    }
+    startRow++;
+
+    // Right Column
+    for ( let RightColumnIndex = startRow; RightColumnIndex <= endRow; RightColumnIndex++) {
+      OuterArr[ RightColumnIndex ][ endColumn ] = Counter;
+      Counter++;
+    }
+
+    endColumn--;
+
+    //Bottom row
+    for ( let BottomRowIndex = endColumn; BottomRowIndex >= startColumn; BottomRowIndex--)
+    {
+      OuterArr[ endRow ][ BottomRowIndex ] = Counter;
+      Counter++;
+    }
+
+    endRow--;
+
+    //Left Column
+    for ( let LeftColumn = endRow; LeftColumn >= startRow; LeftColumn--)
+    {
+      OuterArr[ LeftColumn ][ startColumn ] = Counter;
+      Counter++;
+    }
+
+    startColumn++;
+
+
+  }
+
+  return OuterArr;
 }
 
 module.exports = matrix;
