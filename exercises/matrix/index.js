@@ -18,7 +18,7 @@
 function matrix ( n )
 {
   const OuterArr = [];
-  OuterArr.push( [].repeat( n ) ); 
+  // OuterArr.push( [].repeat( n ) ); 
 }
 
 module.exports = matrix;
