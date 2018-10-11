@@ -8,6 +8,74 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+function slowFib ( n )
+{
+  //Solution #1
+  // let counter = 0;
+  // const fibSe = [];
+  // for ( let i = 0; i <= n; i++ )
+  // {
+  //   fibSe.push( counter );
+  //   if ( counter === 0 )
+  //   {
+  //     counter++;
+  //   }
+  //   else
+  //   {
+  //     counter += fibSe[ i - 1 ];
+  //   }
+  // }
+
+  // return fibSe[ n ];
+
+  //Solution #2
+
+  // const result = [ 0, 1 ];
+
+  // for ( let i = 2; i <= n; i++ )
+  // {
+  //   const a = result[ i - 1 ];
+  //   const b = result[ i - 2 ];
+
+  //   result.push( a + b );
+  // }
+
+  // return result[ result.length - 1 ];
+
+  //Solution #3 Slow Recurssion
+  // if ( n < 2 )
+  // {
+    // return n;
+  // }
+  // return fib( n - 1 ) + fib( n - 2 ); 
+
+  //Solution #4 Memoization
+
+  if ( n < 2 )
+    {
+     return n;
+    }
+    return fib( n - 1 ) + fib( n - 2 ); 
+}
+
+function memoization ( fn )
+{
+  const cache = {};
+  return function ( ...args )
+  {
+    if ( cache[ args ] )
+    {
+      return cache[ args ];
+    }
+    else
+    {
+      const result = fn.apply( this, args );
+      cache[ args ] = result;
+      return result;
+    }
+  };
+}
+
+const fib = memoization( slowFib );
 
 module.exports = fib;
