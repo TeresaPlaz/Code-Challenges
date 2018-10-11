@@ -8,7 +8,9 @@
 // Example:
 //   fib(4) === 3
 
-function slowFib ( n )
+const cache = {};
+
+function fib ( n )
 {
   //Solution #1
   // let counter = 0;
@@ -51,31 +53,21 @@ function slowFib ( n )
 
   //Solution #4 Memoization
 
-  if ( n < 2 )
-    {
-     return n;
-    }
-    return fib( n - 1 ) + fib( n - 2 ); 
-}
-
-function memoization ( fn )
-{
-  const cache = {};
-  return function ( ...args )
+  if ( cache[ n ] )
   {
-    if ( cache[ args ] )
-    {
-      return cache[ args ];
-    }
-    else
-    {
-      const result = fn.apply( this, args );
-      cache[ args ] = result;
-      return result;
-    }
-  };
+    return cache[ n ];
+  }
+  else if ( n < 2 )
+  {
+     return n;
+  }
+  else
+  {
+    const result = fib( n - 1 ) + fib( n - 2 );
+    cache[ n ] = result;
+    return result;
+  }
+     
 }
-
-const fib = memoization( slowFib );
 
 module.exports = fib;
