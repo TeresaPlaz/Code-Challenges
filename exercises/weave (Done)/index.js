@@ -27,29 +27,17 @@ const Queue = require('./queue');
 function weave ( sourceOne, sourceTwo )
 {
   const thirdQueue = new Queue();
-  let guide = 0;
 
-  if ( sourceOne.data.length > sourceTwo.data.length )
-  {
-    guide = sourceOne.data.length - 1;
-  }
-  else
-  {
-    guide = sourceTwo.data.length - 1;
-  }
-
-  for ( guide; guide >= 0; guide--)
+while (sourceOne.peek() || sourceTwo.peek())
   {
     if ( sourceOne.peek())
     {
-      thirdQueue.add( sourceOne.peek());
-      sourceOne.remove();
+      thirdQueue.add( sourceOne.remove());
     }
 
     if ( sourceTwo.peek())
     {
-      thirdQueue.add( sourceTwo.peek());
-      sourceTwo.remove();
+      thirdQueue.add( sourceTwo.remove());
     }
   
   }

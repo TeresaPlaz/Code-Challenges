@@ -5,7 +5,8 @@
 // removing it.
 
 class Queue {
-  constructor() {
+  constructor () 
+  {
     this.data = [];
   }
 
