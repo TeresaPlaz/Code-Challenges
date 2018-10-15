@@ -40,15 +40,15 @@ function weave ( sourceOne, sourceTwo )
 
   for ( guide; guide >= 0; guide--)
   {
-    if ( sourceOne.data[sourceOne.peek()])
+    if ( sourceOne.peek())
     {
-      thirdQueue.add( sourceOne.data[sourceOne.peek()]);
+      thirdQueue.add( sourceOne.peek());
       sourceOne.remove();
     }
 
-    if ( sourceTwo.data[sourceTwo.peek()])
+    if ( sourceTwo.peek())
     {
-      thirdQueue.add( sourceTwo.data[sourceTwo.peek()]);
+      thirdQueue.add( sourceTwo.peek());
       sourceTwo.remove();
     }
   
