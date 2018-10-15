@@ -64,7 +64,6 @@ function matrix ( n )
 
     startColumn++;
 
-
   }
 
   return OuterArr;
