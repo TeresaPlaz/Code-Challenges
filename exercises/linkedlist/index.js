@@ -83,18 +83,18 @@ class LinkedList
 
   insertLast (data)
   {
-    let node = this.head;
+    let last = this.getLast();
+    const replace = new Node( data );
 
-    while ( node && node.next )
+    if ( last )
     {
-      if ( !node.next.next )
-      {
-        node.next.next = new Node( data, node.next );
-      }
-      node = node.next;
+      last.next = replace; 
     }
 
-    return node;
+    else
+    {
+      this.head = replace;
+    }
   }
 
 }
