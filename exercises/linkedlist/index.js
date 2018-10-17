@@ -13,7 +13,7 @@ class Node
 
 class LinkedList
 {
-  constructor ()
+  constructor () 
   {
     this.head = null;
   }
@@ -46,17 +46,57 @@ class LinkedList
   {
     let node = this.head;
 
-    if ( node.next )
-    {
-      while ( node )
+      while ( node && node.next )
       {
         node = node.next;
-        console.log( node );
       }
-    }
-    console.log( node );
+
       return node;
   }
+
+  clear ()
+  {
+    if ( this.head )
+    {
+      this.head = null;
+    }
+  }
+
+  removeFirst ()
+  {
+    this.head = this.head.next;
+  }
+
+  removeLast ()
+  {
+    let node = this.head;
+
+    if ( !node ) { return; }
+    if ( !node.next ) { this.head = null; return;}
+    
+      while ( node.next.next )
+      {
+          node = node.next;
+      }
+    node.next = null;
+  }
+
+  insertLast (data)
+  {
+    let node = this.head;
+
+    while ( node && node.next )
+    {
+      if ( !node.next.next )
+      {
+        node.next.next = new Node( data, node.next );
+      }
+      node = node.next;
+    }
+
+    return node;
+  }
+
 }
 
 module.exports = { Node, LinkedList };
