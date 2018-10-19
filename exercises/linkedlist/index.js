@@ -97,6 +97,11 @@ class LinkedList
     }
   }
 
+  getAt ()
+  {
+    
+  }
+
 }
 
 module.exports = { Node, LinkedList };
