@@ -118,7 +118,34 @@ class LinkedList
     return null;
   }
   
-  
+  removeAt ( n )
+  {
+    if ( !this.head ) { return; }
+
+    if ( n === 0 ) { this.head = this.head.next; return; }
+
+    const previous = this.getAt( n - 1 );
+
+    if ( !previous || !previous.next) { return; }
+
+    else
+    {
+      previous.next = previous.next.next;
+    }
+  }
+
+  insertAt ( data, n )
+  {
+    if ( !this.head ) { this.head = new Node( data ); return; }
+    else if ( n === 0 ) { this.insertFirst( data ); return; }
+    else
+    {
+      const previous = this.getAt( n - 1 ) || this.getLast();
+      const node = new Node( data, previous.next );
+        previous.next = node;
+        return;
+    }
+  }
 
 }
 
