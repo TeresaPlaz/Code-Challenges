@@ -99,9 +99,9 @@ class LinkedList
 
   getAt (n)
   {
+
     let counter = 0;
     let node = this.head;
-    {
       while (node)
       {
         if ( n === counter )
@@ -114,11 +114,11 @@ class LinkedList
           node = node.next;
         }
       }
-
-      return node;
-    }
-    return counter;
+    
+    return null;
   }
+  
+  
 
 }
 
