@@ -50,7 +50,14 @@ class Tree
 
   traverseDF (fun)
   {
-    
+    const newArr = [ this.root ];
+
+    while (newArr.length)
+    {
+      let node = newArr.shift();
+      newArr.unshift( ...node.children );
+      fun( node );
+    }
   }
 }
 
