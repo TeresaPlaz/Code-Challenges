@@ -54,7 +54,7 @@ class Tree
 
     while (newArr.length)
     {
-      let node = newArr.shift();
+      const node = newArr.shift();
       newArr.unshift( ...node.children );
       fun( node );
     }
