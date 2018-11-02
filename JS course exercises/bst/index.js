@@ -18,6 +18,44 @@ class Node
     this.left = null;
     this.right = null;
   }
+
+  insert (n)
+  {
+    if (n > this.data && !this.right)
+    {
+      this.right = new Node( n );
+    }
+    else if ( n > this.data && this.right )
+    {
+      this.right.insert( n );
+    }
+    else if (n < this.data && this.left) 
+    {
+      this.left.insert( n );
+    }
+    else if ( n < this.data && !this.left )
+    {
+      this.left = new Node( n );
+    }
+  }
+
+  contains (n2)
+  {
+    if ( this.data === n2 )
+    {
+      return this;
+    }
+    else if ( n2 > this.data && this.right)
+    {
+      return this.right.contains( n2 );
+    }
+    else if ( n2 < this.data && this.left)
+    {
+      return this.left.contains( n2 );
+    }
+
+    return null;
+  }
 }
 
 module.exports = Node;
